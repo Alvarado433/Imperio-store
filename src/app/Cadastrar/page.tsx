@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { FaUser, FaEnvelope, FaLock, FaPhone, FaIdCard } from "react-icons/fa";
 import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { Toast, ToastContainer } from "react-bootstrap";
-import conn from "@/service/Conexao/conn";
+
 import { AxiosError, isAxiosError } from "axios";
+import conn from "@/service/Conexao/conn";
 
 interface UsuarioFormulario {
   nome: string;
