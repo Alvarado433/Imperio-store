@@ -186,7 +186,7 @@ export default function CategoriaClient({ categoria }: CategoriaClientProps) {
             <li
               className="breadcrumb-item active text-secondary"
               aria-current="page"
-              style={{ fontWeight: "600" }}
+              style={{ fontWeight: 600 }}
             >
               {categoriaData?.nome}
             </li>

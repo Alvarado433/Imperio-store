@@ -109,7 +109,7 @@ export default function Produtocate() {
 
           {/* Coluna de Produtos */}
           <Col md={7}>
-            <h6 className="text-white mb-3" style={{ fontWeight: '600' }}>
+            <h6 className="text-white mb-3" style={{ fontWeight: 600 }}>
               {categoriaAtiva ? `Produtos de "${categoriaAtiva}"` : 'Selecione uma categoria'}
             </h6>
 
@@ -121,7 +121,7 @@ export default function Produtocate() {
                 style={{
                   listStyleType: 'none',
                   color: '#5a1a2a',
-                  fontWeight: '500',
+                  fontWeight: 500,
                 }}
               >
                 {produtosPorCategoria[categoriaAtiva || '']?.slice(0, 5).map((prod) => (

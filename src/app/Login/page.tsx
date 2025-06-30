@@ -3,14 +3,13 @@
 import useLogin from "@/service/Hooks/Login";
 import { useState } from "react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
- // caminho para seu hook
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
-  const { login, loading, error} = useLogin();
+  const { login, loading, error } = useLogin();
   const [sucesso, setSucesso] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -75,7 +74,7 @@ export default function Login() {
             padding: "0.75rem",
             marginBottom: "1rem",
             textAlign: "center",
-            fontWeight: "600",
+            fontWeight: 600,
             fontSize: "0.95rem",
           }}>
             {error}
@@ -91,7 +90,7 @@ export default function Login() {
             padding: "0.75rem",
             marginBottom: "1rem",
             textAlign: "center",
-            fontWeight: "600",
+            fontWeight: 600,
             fontSize: "0.95rem",
           }}>
             {sucesso}
@@ -163,7 +162,7 @@ export default function Login() {
             <a href="/esqueci-senha" style={{
               color: "#b76e79",
               textDecoration: "none",
-              fontWeight: "600",
+              fontWeight: 600,
               fontSize: "0.9rem",
             }}>
               Esqueci a senha
@@ -177,7 +176,7 @@ export default function Login() {
               width: "100%",
               padding: "14px 0",
               fontSize: "1.1rem",
-              fontWeight: "700",
+              fontWeight: 700,
               backgroundColor: "#b76e79",
               color: "#f7e6ad",
               border: "none",
@@ -195,7 +194,7 @@ export default function Login() {
 
         <p style={{ textAlign: "center", fontSize: "0.95rem" }}>
           Não tem uma conta?{" "}
-          <a href="/Cadastrar" style={{ color: "#b76e79", fontWeight: "700", textDecoration: "none" }}>
+          <a href="/Cadastrar" style={{ color: "#b76e79", fontWeight: 700, textDecoration: "none" }}>
             Cadastre-se aqui
           </a>
         </p>

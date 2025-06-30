@@ -26,7 +26,6 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
   const [error, setError] = useState<string | null>(null);
   const [filtro, setFiltro] = useState('');
 
-  // Carrega todas categorias ao abrir sidebar, para mostrar lista completa inicialmente
   useEffect(() => {
     if (show) {
       setLoading(true);
@@ -34,17 +33,15 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
       axios.get('/categorias/listrar')
         .then(res => {
           setCategorias(res.data);
-          setProdutos([]);  // limpa produtos no início
+          setProdutos([]);
         })
         .catch(() => setError('Erro ao carregar categorias'))
         .finally(() => setLoading(false));
     }
   }, [show]);
 
-  // Função para buscar produtos conforme filtro (debounce simples pode ser implementado futuramente)
   useEffect(() => {
     if (filtro.trim().length === 0) {
-      // Se campo vazio, limpar produtos e mostrar só categorias
       setProdutos([]);
       setError(null);
       return;
@@ -62,7 +59,6 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
 
   }, [filtro]);
 
-  // Filtra categorias localmente pelo filtro também
   const categoriasFiltradas = categorias.filter(cat =>
     cat.nome.toLowerCase().includes(filtro.toLowerCase())
   );
@@ -94,7 +90,6 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
           flexGrow: 1,
         }}
       >
-        {/* Barra de pesquisa */}
         <Form.Control
           type="search"
           placeholder="Pesquisar categorias e produtos..."
@@ -106,7 +101,7 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
             backgroundColor: 'rgba(255,255,255,0.15)',
             border: 'none',
             color: '#fff',
-            fontWeight: '600',
+            fontWeight: 600, // CORRIGIDO AQUI
           }}
           className="text-white"
         />
@@ -114,7 +109,6 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
         {loading && <p style={{ color: '#fbeaea' }}>Carregando...</p>}
         {error && <p style={{ color: '#ff6666' }}>{error}</p>}
 
-        {/* Se tiver filtro, mostrar resultados filtrados */}
         {filtro.trim() ? (
           <>
             <div style={{ marginBottom: '1rem' }}>
@@ -129,7 +123,7 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
                     display: 'block',
                     padding: '6px 12px',
                     color: '#fbeaea',
-                    fontWeight: '600',
+                    fontWeight: 600, // CORRIGIDO AQUI
                     fontSize: '1rem',
                     textDecoration: 'none',
                     borderRadius: '6px',
@@ -157,7 +151,7 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
                     display: 'block',
                     padding: '6px 12px',
                     color: '#fbeaea',
-                    fontWeight: '600',
+                    fontWeight: 600, // CORRIGIDO AQUI
                     fontSize: '1rem',
                     textDecoration: 'none',
                     borderRadius: '6px',
@@ -174,7 +168,6 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
             </div>
           </>
         ) : (
-          // Se não tem filtro, mostra só categorias todas
           <>
             <h6 style={{ color: '#fbeaea' }}>Categorias</h6>
             {categorias.length === 0 && !loading && !error && <p style={{ color: '#fbeaea' }}>Nenhuma categoria encontrada.</p>}
@@ -187,7 +180,7 @@ export default function Sidebar({ show, onHide }: SidebarProps) {
                   display: 'block',
                   padding: '10px 15px',
                   color: '#fbeaea',
-                  fontWeight: '600',
+                  fontWeight: 600, // CORRIGIDO AQUI
                   fontSize: '1.1rem',
                   textDecoration: 'none',
                   borderRadius: '6px',
