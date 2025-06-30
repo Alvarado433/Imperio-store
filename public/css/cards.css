@@ -1,0 +1,43 @@
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+}
+
+.card-custom {
+  border-radius: 1rem;
+  border: none;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card-produtos {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.card-categorias {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.card-body-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title-custom {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.card-text-custom {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+}

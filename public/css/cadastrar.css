@@ -1,0 +1,186 @@
+/* Container centralizado */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: #fff0f6; /* rosa bem clarinho de fundo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #4a3c4c;
+}
+
+/* Card branco com sombra suave e borda arredondada */
+.card {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(179, 82, 126, 0.2);
+  text-align: center;
+  border: 1px solid #e2b8d1;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 14px 40px rgba(179, 82, 126, 0.35);
+}
+
+/* Título */
+.card-title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+  color: #7a455a;
+  letter-spacing: 1px;
+}
+
+.highlight {
+  color: #b3527e; /* rosa queimado */
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* Grupo de input com ícone */
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b3527e;
+  font-size: 1.3rem;
+  pointer-events: none;
+}
+
+/* Input estilizado */
+.input-group input {
+  width: 100%;
+  padding: 0.85rem 0.85rem 0.85rem 45px;
+  font-size: 1rem;
+  border: 2px solid #dca6c3;
+  border-radius: 12px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #5a3e55;
+  background: #fff0f6;
+}
+
+.input-group input::placeholder {
+  color: #b68aa0;
+  font-style: italic;
+}
+
+.input-group input:focus {
+  border-color: #b3527e;
+  outline: none;
+  box-shadow: 0 0 8px #b3527eaa;
+  background: #fff;
+}
+
+/* Botão de mostrar/ocultar senha */
+.password-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.mostrar-senha-btn {
+  position: absolute;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #7a455a;
+  font-size: 1.3rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.mostrar-senha-btn:hover,
+.mostrar-senha-btn:focus {
+  color: #b3527e;
+  outline: none;
+}
+
+/* Botão principal */
+.btn {
+  background-color: #b3527e;
+  border: none;
+  color: white;
+  padding: 0.85rem 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(179, 82, 126, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn:hover:not(:disabled),
+.btn:focus:not(:disabled) {
+  background-color: #8a3a62;
+  box-shadow: 0 6px 16px rgba(138, 58, 98, 0.7);
+  outline: none;
+}
+
+/* Mensagens de erro e sucesso */
+.text-danger {
+  color: #d6457e;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.text-success {
+  color: #7ca857;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Footer texto */
+.text-footer {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #7a455a;
+}
+
+.text-footer a {
+  color: #b3527e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.text-footer a:hover,
+.text-footer a:focus {
+  color: #8a3a62;
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Responsividade simples */
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .btn {
+    font-size: 1.05rem;
+  }
+}

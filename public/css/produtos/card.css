@@ -1,0 +1,196 @@
+ .card-container {
+          background: #fff0f5; /* rosa queimado claro */
+          border-radius: 16px;
+          box-shadow: 0 6px 20px rgba(173, 54, 87, 0.25); /* sombra rosada */
+          padding: 28px;
+          display: flex;
+          gap: 32px;
+          flex-wrap: nowrap;
+          min-height: 400px;
+          font-family: 'Segoe UI', sans-serif;
+          flex-direction: row;
+          color: #55182b; /* texto rosa escuro */
+        }
+
+        .left-content {
+          flex: 1 1 auto;
+          display: flex;
+          gap: 20px;
+          min-width: 0;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        .top-left {
+          display: flex;
+          gap: 20px;
+        }
+
+        .miniaturas {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .miniaturas img {
+          width: 60px;
+          height: 60px;
+          border-radius: 8px;
+          object-fit: cover;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          opacity: 0.7;
+          border: 1px solid #bb5478;
+        }
+
+        .miniaturas img.selected {
+          border: 2px solid #7a2048; /* rosa queimado mais escuro */
+          opacity: 1;
+        }
+
+        .imagem-principal {
+          width: 320px;
+          height: 360px;
+          object-fit: contain;
+          border-radius: 12px;
+          box-shadow: 0 4px 14px rgba(122, 32, 72, 0.3);
+          background: #ffe6f0; /* fundo levemente rosado */
+        }
+
+        .descricao {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+
+        .descricao h1 {
+          color: #7a2048;
+        }
+
+        .right-column {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          flex: 0 0 260px;
+          min-height: 120px;
+          align-self: flex-start;
+        }
+
+        .cep-container {
+          background: #ffe6f0;
+          border: 1px solid #bb5478;
+          padding: 16px;
+          border-radius: 16px;
+          box-shadow: 0 8px 20px rgba(173, 54, 87, 0.15);
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          font-family: 'Segoe UI', sans-serif;
+          color: #55182b;
+        }
+
+        .cep-container label {
+          font-weight: 700;
+          font-size: 1rem;
+          color: #7a2048;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .cep-container input {
+          padding: 10px;
+          font-size: 1rem;
+          border-radius: 10px;
+          border: 2px solid #bb5478;
+          outline: none;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+          box-shadow: inset 0 1px 3px rgba(186, 85, 125, 0.2);
+          color: #55182b;
+          background: #fff0f5;
+        }
+
+        .cep-container input:focus {
+          border-color: #7a2048;
+          box-shadow: 0 0 8px #bb5478;
+          background: #fff0f5;
+        }
+
+        .cep-erro {
+          color: #b30059;
+          font-size: 0.85rem;
+          font-weight: 700;
+        }
+
+        .frete-info {
+          font-size: 1rem;
+          font-weight: 600;
+          color: #008000;
+        }
+
+        .btn-adicionar {
+          background-color: #7a2048;
+          color: #fff;
+          font-weight: 700;
+          font-size: 1.1rem;
+          padding: 14px 32px;
+          border-radius: 14px;
+          border: none;
+          cursor: pointer;
+          box-shadow: 0 6px 16px rgba(122, 32, 72, 0.6);
+          transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: center;
+          width: 260px;
+          align-self: flex-start;
+        }
+
+        .btn-adicionar:hover {
+          background-color: #55182b;
+          box-shadow: 0 8px 24px rgba(85, 24, 43, 0.9);
+        }
+
+        /* Responsivo */
+        @media (max-width: 900px) {
+          .card-container {
+            flex-wrap: wrap;
+            flex-direction: column;
+            min-height: auto;
+          }
+
+          .left-content {
+            flex-direction: row;
+            justify-content: flex-start;
+            gap: 12px;
+          }
+
+          .top-left {
+            flex-direction: column;
+            gap: 12px;
+          }
+
+          .imagem-principal {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+          }
+
+          .right-column {
+            flex: 1 1 auto;
+            width: 100%;
+            align-self: stretch;
+          }
+
+          .cep-container {
+            width: 100%;
+          }
+
+          .btn-adicionar {
+            width: 100%;
+            margin-bottom: 16px;
+            align-self: stretch;
+            padding: 16px 0;
+            font-size: 1.2rem;
+          }
+        }

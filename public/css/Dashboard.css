@@ -1,0 +1,332 @@
+:root {
+  --primary-color: #ffc107;
+  --primary-color-hover: rgba(255, 193, 7, 0.15);
+  --primary-color-light: rgba(255, 193, 7, 0.1);
+  --danger-color: #dc3545;
+  --dark-bg: #212529;
+  --dark-bg-hover: #343a40;
+  --text-light: #ced4da;
+  --text-dark: #212529;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* Container geral */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  background-color: #f0f2f5;
+  padding-top: 60px; /* espaço para navbar fixa */
+}
+
+/* Navbar topo */
+.navbar-top {
+  height: 60px;
+  background-color: var(--dark-bg);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  user-select: none;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-menu {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.btn-menu:hover,
+.btn-menu:focus {
+  color: #fff;
+  outline: none;
+}
+
+/* Perfil dropdown */
+.profile-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  cursor: pointer;
+  color: var(--primary-color);
+  user-select: none;
+}
+
+.profile-dropdown span {
+  font-weight: 500;
+}
+
+.profile-dropdown .chevron {
+  transition: transform 0.3s ease;
+}
+
+.profile-dropdown.open .chevron {
+  transform: rotate(180deg);
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background: var(--dark-bg);
+  color: var(--primary-color);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  min-width: 140px;
+  padding: 0.5rem 0;
+  z-index: 150;
+  user-select: none;
+}
+
+.profile-dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.profile-dropdown-menu a.logout {
+  color: var(--danger-color);
+}
+
+.profile-dropdown-menu a:hover,
+.profile-dropdown-menu a:focus {
+  background: var(--primary-color-hover);
+  outline: none;
+}
+
+/* Wrapper conteúdo */
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 60px);
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: var(--dark-bg);
+  color: #e9ecef;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0.5rem;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  user-select: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  height: calc(100vh - 60px);
+  z-index: 105;
+  will-change: width;
+  border-right: 1px solid #2e2e2e;
+}
+
+/* Sidebar expandido e colapsado */
+.sidebar.expanded {
+  width: 260px;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+/* Cabeçalho do sidebar (texto só aparece quando expandido) */
+.sidebar-header {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .sidebar-header {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Navegação sidebar */
+.sidebar-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Links sidebar */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-light);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.sidebar-link svg {
+  min-width: 22px;
+  min-height: 22px;
+  font-size: 20px;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+/* Quando sidebar fechado, só mostra ícone e tooltip */
+.sidebar.collapsed .sidebar-link {
+  justify-content: center;
+  gap: 0;
+  padding: 0.75rem 0;
+}
+
+.sidebar.collapsed .sidebar-link span {
+  display: none;
+}
+
+/* Tooltip customizado no sidebar fechado */
+.sidebar.collapsed .sidebar-link[data-tooltip]:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(8px, -50%);
+  background-color: var(--dark-bg);
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  pointer-events: none;
+  z-index: 200;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Link ativo */
+.sidebar-link.active {
+  color: var(--primary-color);
+  background-color: var(--primary-color-hover);
+  border-left: 4px solid var(--primary-color);
+}
+
+/* Link de logout (caso use) */
+.sidebar-link.logout {
+  color: var(--danger-color);
+}
+
+.sidebar-link.logout:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--danger-color);
+}
+
+/* Hover nos links */
+.sidebar-link:hover:not(.active) {
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+}
+
+/* Main content */
+.main-content {
+  margin-left: 260px;
+  flex: 1;
+  padding: 2rem 2.5rem;
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 60px);
+  overflow-y: auto;
+  transition: margin-left 0.3s ease;
+  user-select: none;
+}
+
+/* Ajusta margem quando sidebar fechado */
+.sidebar.collapsed ~ .main-content {
+  margin-left: 70px;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .sidebar.expanded {
+    width: 220px;
+  }
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: -260px;
+    height: calc(100vh - 60px);
+    width: 260px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.25);
+    transition: left 0.3s ease;
+    z-index: 120;
+  }
+  .sidebar.expanded {
+    left: 0;
+  }
+  .sidebar.collapsed {
+    left: -260px;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 1rem;
+  }
+
+  /* Overlay para clique fora do menu */
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 115;
+  }
+
+  .sidebar.expanded + .overlay {
+    display: block;
+  }
+}

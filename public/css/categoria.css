@@ -1,0 +1,67 @@
+/* CategoriesDropdown.css */
+
+.category-line {
+  background-color: #ddb0b0;
+  padding: 0.4rem 1.5rem;
+  box-shadow: 0 2px 6px rgb(184 92 92 / 0.25);
+  font-weight: 700;
+  color: #6b2b2b;
+
+  /* REMOVE position sticky para não acompanhar o scroll */
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* Suaviza o scroll horizontal em dispositivos touch */
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-dropdown-toggle {
+  background: none;
+  border: none;
+  color: #6b2b2b;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.category-dropdown-menu {
+  background-color: #fbeaea;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(184 92 92 / 0.35);
+  padding: 0.4rem 0;
+  min-width: 180px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 9999;
+  display: none;
+}
+
+.category-dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 20px;
+  color: #7a2a2a;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #b85c5c;
+  color: #fff5f5;
+}
+
+.dropdown-status {
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.dropdown-status.error {
+  color: red;
+}

@@ -1,0 +1,136 @@
+/* Fundo da seção */
+.prod-section {
+  background-color: #f9f5f6;
+  padding: 3rem 0;
+}
+
+/* Título */
+.prod-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #7c444e; /* rosa queimado escuro */
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(124, 68, 78, 0.5);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Slider item */
+.prod-slider-item {
+  padding: 0 0.75rem;
+}
+
+/* Card */
+.prod-card {
+  border-radius: 20px;
+  cursor: pointer;
+  background: linear-gradient(
+    135deg,
+    #f6e7e9 0%,
+    #f9d5d8 50%,
+    #f3bcc2 100%
+  );
+  border: none;
+  box-shadow: 0 8px 25px rgba(166, 95, 109, 0.2);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+/* Hover card */
+.prod-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(166, 95, 109, 0.35);
+}
+
+/* Ícone favorito */
+.prod-fav-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #a65f6d; /* rosa queimado */
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.prod-fav-icon:hover {
+  color: #7c444e; /* rosa queimado escuro */
+}
+
+/* Imagem do card */
+.prod-card-image {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.3s ease;
+}
+
+/* Corpo do card */
+.prod-card-body {
+  padding: 1.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #7c444e;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Texto dentro do card */
+.prod-card-body p {
+  margin-bottom: 0.6rem;
+}
+
+.prod-card-body strong {
+  color: #a65f6d;
+}
+
+/* Container do PIX */
+.prod-pix-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Valor PIX */
+.prod-pix-valor {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #238636;
+  user-select: none;
+  margin: 0;
+}
+
+/* Badge */
+.prod-badge {
+  font-size: 0.75rem;
+  padding: 0.25em 0.5em;
+  border-radius: 12px;
+  user-select: none;
+  letter-spacing: 0.05em;
+}
+
+/* Estoque */
+.prod-estoque {
+  font-size: 0.85rem;
+  user-select: none;
+  letter-spacing: 0.02em;
+  margin-top: auto;
+}
+
+/* Estoque alerta */
+.prod-estoque-alerta {
+  color: #d9534f !important; /* bootstrap danger */
+  font-weight: 600;
+}
+
+/* Estoque normal */
+.prod-estoque-normal {
+  color: #6c757d !important; /* bootstrap secondary */
+}

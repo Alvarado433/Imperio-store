@@ -1,0 +1,182 @@
+/* Cores principais rosa queimado */
+:root {
+  --rosa-queimado: #b85c71;
+  --rosa-claro: #f3d1d8;
+  --rosa-escuro: #7e3547;
+  --cinza-claro: #f8f4f6;
+  --cinza-escuro: #5a4a51;
+}
+
+/* Breadcrumb */
+.breadcrumb-custom {
+  border-left: 6px solid var(--rosa-queimado) !important;
+  background-color: var(--cinza-claro) !important;
+}
+
+.breadcrumb-link {
+  color: var(--rosa-queimado) !important;
+  font-weight: 600 !important;
+}
+
+.breadcrumb-item.active {
+  color: var(--rosa-escuro) !important;
+  font-weight: 700 !important;
+}
+
+/* Filtro lateral */
+.filter-box {
+  background-color: var(--cinza-claro);
+  border: 1.5px solid var(--rosa-queimado);
+  box-shadow: 0 4px 10px rgba(184, 92, 113, 0.3);
+  padding: 1.5rem 1.8rem;
+  border-radius: 1rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.filter-box:hover {
+  box-shadow: 0 6px 20px rgba(184, 92, 113, 0.5);
+}
+
+.filter-title {
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--rosa-queimado);
+  border-bottom: 2px solid var(--rosa-queimado);
+  padding-bottom: 0.4rem;
+  font-size: 1.2rem;
+}
+
+/* Botões filtro */
+.filter-box button.btn-warning {
+  background-color: var(--rosa-queimado);
+  border-color: var(--rosa-queimado);
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.filter-box button.btn-warning:hover,
+.filter-box button.btn-warning:focus {
+  background-color: var(--rosa-escuro);
+  border-color: var(--rosa-escuro);
+  box-shadow: none;
+}
+
+.filter-box button.btn-outline-warning {
+  color: var(--rosa-queimado);
+  border-color: var(--rosa-queimado);
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-box button.btn-outline-warning:hover,
+.filter-box button.btn-outline-warning:focus {
+  background-color: var(--rosa-queimado);
+  color: #fff;
+  border-color: var(--rosa-queimado);
+}
+
+/* Inputs de filtro */
+.filter-box input.form-control {
+  border: 1.5px solid var(--rosa-queimado);
+  background-color: #fff0f3;
+  color: var(--rosa-escuro);
+  font-weight: 500;
+  transition: border-color 0.3s ease;
+}
+
+.filter-box input.form-control:focus {
+  border-color: var(--rosa-escuro);
+  box-shadow: 0 0 5px rgba(184, 92, 113, 0.5);
+  background-color: #fff;
+}
+
+/* Cards de produtos */
+.produto-card {
+  background-color: #fff0f3;
+  cursor: pointer;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 10px rgba(184, 92, 113, 0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.produto-card:hover,
+.produto-card:focus-within {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(184, 92, 113, 0.3);
+}
+
+/* Container imagem */
+.produto-imagem-container {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 3px solid var(--rosa-queimado);
+  transition: border-color 0.3s ease;
+}
+
+.produto-card:hover .produto-imagem-container {
+  border-color: var(--rosa-escuro);
+}
+
+.produto-imagem {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+  filter: none;
+  transition: transform 0.4s ease;
+}
+
+.produto-card:hover .produto-imagem {
+  transform: scale(1.05);
+}
+
+/* Texto do card */
+.produto-nome {
+  min-height: 3rem;
+  color: var(--rosa-escuro);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+
+.produto-categoria {
+  color: var(--rosa-queimado);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.produto-preco {
+  color: var(--rosa-queimado);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-top: auto;
+  text-shadow: 1px 1px 3px rgba(184, 92, 113, 0.3);
+}
+
+/* Botão carregar mais */
+.btn-outline-warning {
+  color: var(--rosa-queimado);
+  border-color: var(--rosa-queimado);
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 50px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.btn-outline-warning:hover,
+.btn-outline-warning:focus {
+  background-color: var(--rosa-queimado);
+  color: #fff;
+  border-color: var(--rosa-queimado);
+  box-shadow: 0 0 15px rgba(184, 92, 113, 0.6);
+}

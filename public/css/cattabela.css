@@ -1,0 +1,49 @@
+/* public/css/categorias.css */
+.container-tabela {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+}
+
+.tabela-estilizada {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tabela-estilizada thead {
+  background-color: #f7f9fc;
+  font-weight: 600;
+  color: #333;
+}
+
+.tabela-estilizada th,
+.tabela-estilizada td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.tabela-estilizada tbody tr:hover {
+  background-color: #f1f3f5;
+  transition: 0.2s;
+  cursor: default;
+}
+
+.modal-header-custom {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.modal-header-custom .modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
